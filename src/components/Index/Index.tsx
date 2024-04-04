@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import { useState, useEffect } from "react";
 
 interface Empresa {
@@ -14,7 +14,6 @@ interface Empresa {
 };
 
 const Index = () => {
-
   const [empresas, setEmpresas] = useState<Empresa[]>([]);
 
   useEffect(() => {
@@ -29,28 +28,41 @@ const Index = () => {
 
     fetchData();
   }, []);
+
   return (
-    <>
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '100px' }}>
-      <table style={{ width: '50%', borderCollapse: 'collapse' }}>
-        <thead>
-          <tr>
-            <th style={{ backgroundColor: '#f2f2f2', padding: '8px', textAlign: 'center' }}><b>EMPRESA</b></th>
-            <th style={{ backgroundColor: '#f2f2f2', padding: '8px', textAlign: 'center' }}><b>VER PAGINA</b></th>
-          </tr>
-        </thead>
-        <tbody>
-          {empresas.map(empresa => (
-            <tr key={empresa.id}>
-              <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'center' }}>{empresa.denominacion}</td>
-              <td style={{ border: '1px solid #ddd', padding: '8px', textAlign: 'center' }}><a href={`home.html?id=${empresa.id}`} style={{ textDecoration: 'none', color: 'blue' }}>URL PAGINA HOME</a></td>
+    <div style={{ 
+      backgroundImage: `url(http://4.bp.blogspot.com/-rf5TPOMiIVQ/VZJ6U22eecI/AAAAAAAAAfA/E1QP30963M0/s1600/Foto-construir-una-gran-empresa-6.png)`, // Establece la URL de la imagen de fondo
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      minHeight: '100vh',
+      padding: '50px 0',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <div style={{ maxWidth: '800px', backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: '10px', padding: '30px', textAlign: 'center' }}>
+        <h1 style={{ color: '#333', marginBottom: '30px' }}>Listado de Empresas</h1>
+        <table style={{ width: '100%', borderCollapse: 'collapse', marginLeft: 'auto', marginRight: 'auto' }}>
+          <thead style={{ backgroundColor: '#f2f2f2' }}>
+            <tr>
+              <th style={{ padding: '15px', textAlign: 'center' }}>EMPRESA</th>
+              <th style={{ padding: '15px', textAlign: 'center' }}>VER PÁGINA</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {empresas.map(empresa => (
+              <tr key={empresa.id} style={{ borderBottom: '1px solid #ddd' }}>
+                <td style={{ padding: '15px', textAlign: 'left', backgroundColor: '#fff' }}>{empresa.denominacion}</td>
+                <td style={{ padding: '15px', textAlign: 'center', backgroundColor: '#fff' }}>
+                  <a href={`home.html?id=${empresa.id}`} style={{ textDecoration: 'none', color: 'blue' }}>URL PÁGINA HOME</a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-  </>
-  )
+  );
 }
 
-export default Index
+export default Index;
