@@ -1859,7 +1859,7 @@ body {
 }
 .page {
   overflow: hidden;
-  min-height: 200px;
+  min-height: 500px;
 }
 .lt-ie9 .page {
   min-width: 1200px;

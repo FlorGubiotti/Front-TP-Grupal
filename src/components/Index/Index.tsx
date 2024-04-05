@@ -1,5 +1,4 @@
 import axios from 'axios';
-import axios from 'axios';
 import { useState, useEffect } from "react";
 
 interface Empresa {
@@ -69,7 +68,5 @@ const Index = () => {
     </div>
   );
 }
-
-export default Index;
 
 export default Index;
