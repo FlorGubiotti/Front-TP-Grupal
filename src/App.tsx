@@ -1,10 +1,14 @@
-import Index from "./components/Index/Index"
+
+import Buscador from "./components/Buscador/Buscador"
+import Navigation from "./components/NavBar/Navigation"
+
 
 function App() {
 
   return (
     <>
-      <Index />
+      <Navigation />
+      <Buscador/>
     </>
   )
 }

@@ -29,6 +29,7 @@ const Index = () => {
     fetchData();
   }, []);
 
+
   return (
     <div style={{ 
       backgroundImage: `url(http://4.bp.blogspot.com/-rf5TPOMiIVQ/VZJ6U22eecI/AAAAAAAAAfA/E1QP30963M0/s1600/Foto-construir-una-gran-empresa-6.png)`, // Establece la URL de la imagen de fondo
@@ -60,6 +61,9 @@ const Index = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div>
+        <button> Hola </button>
       </div>
     </div>
   );
